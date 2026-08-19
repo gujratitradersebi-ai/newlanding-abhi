@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gujarati Trader | Market Community</title>
+<title>Gujarati Trader | Market Education & Insights</title>
+
+<meta name="description"
+content="Gujarati Trader provides educational market information, market discussions and learning resources for stock market enthusiasts.">
+
+<meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -25,39 +33,44 @@ html{
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:#060606;
-    color:#fff;
+    font-family:'Inter','Noto Sans Gujarati',sans-serif;
+    background:#080808;
+    color:#ffffff;
     overflow-x:hidden;
+    line-height:1.5;
 }
 
 /* =========================
-   BACKGROUND EFFECT
+   BACKGROUND
 ========================= */
 
 body::before{
     content:"";
     position:fixed;
-    width:500px;
-    height:500px;
-    background:rgba(212,175,55,.12);
-    filter:blur(130px);
+    width:300px;
+    height:300px;
+    top:-140px;
+    left:-100px;
+    background:#d4af37;
+    opacity:.07;
+    filter:blur(100px);
     border-radius:50%;
-    top:-250px;
-    left:-200px;
+    pointer-events:none;
     z-index:-1;
 }
 
 body::after{
     content:"";
     position:fixed;
-    width:450px;
-    height:450px;
-    background:rgba(212,175,55,.08);
-    filter:blur(130px);
+    width:300px;
+    height:300px;
+    bottom:-150px;
+    right:-120px;
+    background:#d4af37;
+    opacity:.05;
+    filter:blur(100px);
     border-radius:50%;
-    bottom:-250px;
-    right:-200px;
+    pointer-events:none;
     z-index:-1;
 }
 
@@ -67,88 +80,90 @@ body::after{
 
 .container{
     width:100%;
-    max-width:1150px;
+    max-width:620px;
     margin:auto;
-    padding:0 20px;
+    padding:18px 16px 35px;
 }
 
 /* =========================
-   HEADER
+   BRAND
 ========================= */
 
-header{
-    padding:20px 0;
-    display:flex;
-    justify-content:center;
+.brand{
+    text-align:center;
+    padding:5px 0 22px;
 }
 
-/* =========================
-   LOGO
-========================= */
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo-icon img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    border-radius:18px;
-}
+.logo-wrap{
+    width:82px;
+    height:82px;
+    margin:auto;
+    padding:3px;
+    border-radius:50%;
 
     background:
-    linear-gradient(135deg,#ffd86b,#b8860b);
+    linear-gradient(
+        135deg,
+        #ffe58a,
+        #b8860b
+    );
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.32),
+    0 0 45px rgba(212,175,55,.10);
+}
+
+.logo{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+
+    background:#111;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    color:#000;
-
-    font-size:23px;
-    font-weight:800;
-
-    box-shadow:
-    0 0 20px rgba(212,175,55,.40),
-    0 0 50px rgba(212,175,55,.18);
-
     position:relative;
-
-    animation:logoGlow 3s infinite alternate;
+    overflow:hidden;
 }
 
-.logo-icon img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    border-radius:18px;
-}
-
-@keyframes logoGlow{
-
-    0%{
-        box-shadow:
-        0 0 15px rgba(212,175,55,.30);
-    }
-
-    100%{
-        box-shadow:
-        0 0 35px rgba(212,175,55,.65),
-        0 0 70px rgba(212,175,55,.20);
-    }
-
+.logo::after{
+    content:"";
+    position:absolute;
+    width:150%;
+    height:35%;
+    background:rgba(255,255,255,.06);
+    transform:rotate(-35deg);
 }
 
 .logo-text{
-    font-size:22px;
+    position:relative;
+    z-index:2;
+
+    font-size:25px;
     font-weight:800;
-    letter-spacing:.5px;
+    letter-spacing:-1px;
+
+    color:#e8c95b;
 }
 
-.logo-text span{
+.logo-text small{
+    display:block;
+    font-size:8px;
+    letter-spacing:3px;
+    margin-top:-2px;
+    color:#fff;
+}
+
+.brand h1{
+    margin-top:11px;
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:.4px;
+}
+
+.brand h1 span{
     color:#d4af37;
 }
 
@@ -157,100 +172,64 @@ header{
 ========================= */
 
 .hero{
-    min-height:78vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     text-align:center;
-}
-
-.hero-content{
-    max-width:900px;
-    padding:50px 0;
+    padding:8px 3px 35px;
 }
 
 .badge{
     display:inline-flex;
     align-items:center;
-    gap:8px;
+    gap:7px;
 
-    padding:10px 18px;
+    padding:7px 12px;
 
-    border-radius:50px;
+    border:1px solid rgba(212,175,55,.25);
+    background:rgba(212,175,55,.05);
 
-    border:1px solid rgba(212,175,55,.35);
+    border-radius:30px;
 
-    background:rgba(212,175,55,.06);
+    color:#d8ba51;
 
-    color:#e6c85d;
+    font-size:9px;
+    font-weight:600;
 
-    font-size:12px;
+    letter-spacing:.6px;
 
-    letter-spacing:1px;
-
-    margin-bottom:25px;
+    margin-bottom:17px;
 }
 
-.live-dot{
-    width:8px;
-    height:8px;
-
-    background:#39d98a;
+.dot{
+    width:7px;
+    height:7px;
 
     border-radius:50%;
 
-    box-shadow:0 0 15px #39d98a;
+    background:#40d68a;
 
-    animation:pulse 1.5s infinite;
+    box-shadow:0 0 9px #40d68a;
 }
 
-@keyframes pulse{
-
-    0%{
-        transform:scale(1);
-        opacity:1;
-    }
-
-    50%{
-        transform:scale(1.6);
-        opacity:.5;
-    }
-
-    100%{
-        transform:scale(1);
-        opacity:1;
-    }
-
+.hero h2{
+    font-size:31px;
+    line-height:1.2;
+    font-weight:800;
+    margin-bottom:13px;
 }
 
-.hero h1{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:clamp(45px,8vw,82px);
-
-    line-height:1.05;
-
-    margin-bottom:22px;
-
-}
-
-.hero h1 .gold{
+.hero h2 span{
     color:#d4af37;
 }
 
 .hero p{
-
-    max-width:680px;
-
+    max-width:490px;
     margin:auto;
 
     color:#999;
 
-    font-size:16px;
+    font-size:13px;
+    line-height:1.75;
 
-    line-height:1.8;
-
+    font-family:'Noto Sans Gujarati','Inter',sans-serif;
 }
 
 /* =========================
@@ -258,299 +237,245 @@ header{
 ========================= */
 
 .telegram-btn{
+    width:100%;
+    max-width:315px;
 
-    display:inline-flex;
+    min-height:51px;
 
+    margin:23px auto 0;
+
+    display:flex;
     align-items:center;
-
     justify-content:center;
+    gap:10px;
 
-    gap:12px;
-
-    margin-top:35px;
-
-    padding:17px 30px;
-
-    border-radius:15px;
+    border-radius:13px;
 
     background:
-    linear-gradient(135deg,#ffe184,#c08d17);
+    linear-gradient(
+        135deg,
+        #ffe58a,
+        #b8860b
+    );
 
     color:#111;
 
     text-decoration:none;
 
+    font-size:13px;
     font-weight:800;
 
-    font-size:14px;
-
-    letter-spacing:.3px;
-
-    transition:.3s;
-
     box-shadow:
-    0 10px 30px rgba(212,175,55,.25);
+    0 8px 25px rgba(212,175,55,.20);
 
+    transition:.25s;
 }
 
 .telegram-btn:hover{
-
-    transform:translateY(-5px);
+    transform:translateY(-2px);
 
     box-shadow:
-    0 18px 45px rgba(212,175,55,.45);
-
+    0 12px 30px rgba(212,175,55,.32);
 }
 
 .telegram-icon{
-
-    width:28px;
-
-    height:28px;
+    width:26px;
+    height:26px;
 
     border-radius:50%;
 
-    background:#111;
-
-    color:#f7d96f;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
+    background:#111;
+    color:#f6d66b;
+
+    font-size:13px;
 }
 
 .note{
-
-    margin-top:18px;
+    margin-top:12px;
 
     color:#666;
 
-    font-size:11px;
-
+    font-size:9px;
+    line-height:1.6;
 }
 
 /* =========================
-   MARKET SECTION
+   SECTION
 ========================= */
 
-.market-section{
-
-    padding:50px 0 90px;
-
+.section{
+    padding:5px 0 35px;
 }
 
 .section-title{
-
     text-align:center;
-
-    margin-bottom:35px;
-
+    margin-bottom:18px;
 }
 
 .section-title h2{
-
-    font-size:34px;
-
-    margin-bottom:10px;
-
+    font-size:22px;
+    margin-bottom:6px;
 }
 
 .section-title h2 span{
-
     color:#d4af37;
-
 }
 
 .section-title p{
-
     color:#777;
-
-    font-size:14px;
-
+    font-size:11px;
 }
 
+/* =========================
+   MARKET CARDS
+========================= */
+
 .cards{
-
     display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:20px;
-
+    grid-template-columns:1fr;
+    gap:11px;
 }
 
 .card{
-
     position:relative;
 
-    padding:28px;
+    padding:18px;
 
-    border-radius:22px;
+    border-radius:17px;
 
     background:
-
     linear-gradient(
-    145deg,
-    rgba(255,255,255,.06),
-    rgba(255,255,255,.015)
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.012)
     );
 
     border:1px solid rgba(255,255,255,.08);
-
-    overflow:hidden;
-
-    transition:.35s;
-
 }
 
 .card::before{
-
     content:"";
 
     position:absolute;
 
     top:0;
-
     left:0;
 
     width:100%;
-
-    height:2px;
+    height:1px;
 
     background:
     linear-gradient(
-    90deg,
-    transparent,
-    #d4af37,
-    transparent
+        90deg,
+        transparent,
+        #d4af37,
+        transparent
     );
-
 }
 
-.card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:rgba(212,175,55,.45);
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.35);
-
-}
-
-.card-number{
-
+.card-label{
     color:#d4af37;
 
-    font-size:11px;
+    font-size:9px;
 
-    letter-spacing:2px;
+    letter-spacing:1.5px;
 
-    margin-bottom:15px;
-
+    margin-bottom:7px;
 }
 
 .card h3{
-
-    font-size:23px;
-
-    margin-bottom:10px;
-
+    font-size:18px;
+    margin-bottom:6px;
 }
 
 .card p{
+    color:#858585;
 
-    color:#888;
-
-    font-size:13px;
+    font-size:11px;
 
     line-height:1.7;
 
+    font-family:'Noto Sans Gujarati','Inter',sans-serif;
 }
 
 /* =========================
    FEATURES
 ========================= */
 
-.features{
-
-    padding:40px 0 80px;
-
-}
-
 .feature-grid{
-
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
 
-    gap:20px;
-
+    gap:10px;
 }
 
 .feature{
+    padding:16px;
 
-    padding:28px;
+    border-radius:16px;
 
-    background:#0c0c0c;
+    background:#0d0d0d;
 
-    border:1px solid #1b1b1b;
-
-    border-radius:20px;
-
-    transition:.3s;
-
-}
-
-.feature:hover{
-
-    border-color:rgba(212,175,55,.35);
-
+    border:1px solid #1a1a1a;
 }
 
 .feature-icon{
+    font-size:18px;
 
-    width:45px;
-
-    height:45px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:14px;
-
-    background:rgba(212,175,55,.10);
-
-    color:#e6c85d;
-
-    font-size:20px;
-
-    margin-bottom:15px;
-
+    margin-bottom:7px;
 }
 
 .feature h3{
+    font-size:13px;
 
-    font-size:18px;
-
-    margin-bottom:10px;
-
+    margin-bottom:5px;
 }
 
 .feature p{
-
     color:#777;
 
-    font-size:13px;
+    font-size:10px;
 
-    line-height:1.7;
+    line-height:1.6;
+}
 
+/* =========================
+   INFORMATION BOX
+========================= */
+
+.info-box{
+    padding:20px;
+
+    border-radius:18px;
+
+    background:#0c0c0c;
+
+    border:1px solid #1c1c1c;
+
+    margin-bottom:35px;
+}
+
+.info-box h3{
+    color:#d4af37;
+
+    font-size:15px;
+
+    margin-bottom:8px;
+}
+
+.info-box p{
+    color:#888;
+
+    font-size:11px;
+
+    line-height:1.75;
+
+    font-family:'Noto Sans Gujarati','Inter',sans-serif;
 }
 
 /* =========================
@@ -558,55 +483,43 @@ header{
 ========================= */
 
 .cta{
-
-    margin:30px 0 70px;
-
-    padding:65px 25px;
-
     text-align:center;
 
-    border-radius:30px;
+    padding:34px 17px;
+
+    margin-bottom:35px;
+
+    border-radius:22px;
 
     background:
-
     radial-gradient(
-    circle at top,
-    rgba(212,175,55,.15),
-    transparent 60%
+        circle at top,
+        rgba(212,175,55,.12),
+        transparent 65%
     ),
+    #0d0d0d;
 
-    #0c0c0c;
-
-    border:1px solid rgba(212,175,55,.18);
-
+    border:1px solid rgba(212,175,55,.16);
 }
 
 .cta h2{
+    font-size:23px;
 
-    font-family:'Playfair Display',serif;
-
-    font-size:clamp(30px,5vw,50px);
-
-    margin-bottom:15px;
-
+    margin-bottom:9px;
 }
 
 .cta h2 span{
-
     color:#d4af37;
-
 }
 
 .cta p{
-
     color:#888;
 
-    max-width:600px;
+    font-size:11px;
 
-    margin:auto;
+    line-height:1.7;
 
-    line-height:1.8;
-
+    font-family:'Noto Sans Gujarati','Inter',sans-serif;
 }
 
 /* =========================
@@ -614,27 +527,41 @@ header{
 ========================= */
 
 footer{
+    border-top:1px solid #1a1a1a;
 
-    padding:30px 0 45px;
+    padding:20px 5px;
 
     text-align:center;
 
-    border-top:1px solid #181818;
+    color:#5e5e5e;
 
-    color:#555;
+    font-size:9px;
 
-    font-size:11px;
-
-    line-height:1.8;
-
+    line-height:1.7;
 }
 
-.risk{
+.footer-links{
+    margin-top:13px;
 
-    max-width:850px;
+    display:flex;
 
-    margin:0 auto 18px;
+    justify-content:center;
 
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.footer-links a{
+    color:#888;
+
+    text-decoration:none;
+
+    font-size:9px;
+}
+
+.footer-links a:hover{
+    color:#d4af37;
 }
 
 /* =========================
@@ -642,75 +569,66 @@ footer{
 ========================= */
 
 .floating-telegram{
-
     position:fixed;
 
-    right:20px;
+    right:15px;
+    bottom:15px;
 
-    bottom:20px;
-
-    width:60px;
-
-    height:60px;
+    width:48px;
+    height:48px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     border-radius:50%;
 
     background:
-    linear-gradient(135deg,#ffe184,#b8860b);
+    linear-gradient(
+        135deg,
+        #ffe58a,
+        #b8860b
+    );
 
-    color:#000;
+    color:#111;
 
     text-decoration:none;
 
-    font-size:22px;
-
-    font-weight:bold;
+    font-size:18px;
+    font-weight:800;
 
     box-shadow:
-    0 10px 30px rgba(212,175,55,.40);
+    0 8px 25px rgba(212,175,55,.35);
 
-    animation:float 2s infinite;
-
-}
-
-@keyframes float{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-
+    z-index:99;
 }
 
 /* =========================
-   MOBILE
+   DESKTOP
 ========================= */
 
-@media(max-width:768px){
+@media(min-width:650px){
 
     .container{
-        padding:0 15px;
+        max-width:1050px;
+        padding:30px;
     }
 
-    header{
-        justify-content:center;
+    .logo-wrap{
+        width:92px;
+        height:92px;
+    }
+
+    .brand h1{
+        font-size:30px;
     }
 
     .hero{
-        min-height:75vh;
+        padding-top:15px;
     }
 
-    .hero h1{
-        font-size:48px;
+    .hero h2{
+        font-size:44px;
     }
 
     .hero p{
@@ -718,364 +636,369 @@ footer{
     }
 
     .cards{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(3,1fr);
     }
 
     .feature-grid{
-        grid-template-columns:1fr;
-    }
-
-    .telegram-btn{
-        width:100%;
-        max-width:340px;
+        grid-template-columns:repeat(4,1fr);
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-
 <div class="container">
 
 
-<!-- HEADER -->
+<!-- =================================
+     BRAND / LOGO
+================================= -->
 
-<header>
+<section class="brand">
 
-<div class="logo">
-    
-<div class="logo-icon">
-    <img src="logo.png" alt="Gujarati Trader Logo">
-</div>
+    <div class="logo-wrap">
 
-<div class="logo-text">
-GUJARATI <span>TRADER</span>
-</div>
+        <div class="logo">
 
-</div>
+            <div class="logo-text">
 
-</header>
+                GT
+
+                <small>TRADER</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <h1>
+        GUJARATI <span>TRADER</span>
+    </h1>
+
+</section>
 
 
-
-<!-- HERO SECTION -->
+<!-- =================================
+     HERO
+================================= -->
 
 <section class="hero">
 
-<div class="hero-content">
+    <div class="badge">
 
-<div class="badge">
+        <span class="dot"></span>
 
-<span class="live-dot"></span>
+        MARKET EDUCATION & INSIGHTS
 
-GUJARATI TRADER COMMUNITY
-
-</div>
+    </div>
 
 
-<h1>
+    <h2>
 
-Welcome To<br>
+        Learn The Market<br>
 
-<span class="gold">
-Gujarati Trader
-</span>
+        <span>Stay Informed</span>
 
-</h1>
+    </h2>
 
 
-<p>
+    <p>
 
-એક જ જગ્યાએ માર્કેટ સંબંધિત માહિતી, શૈક્ષણિક ચર્ચાઓ
-અને માર્કેટ અપડેટ્સ સાથે જોડાયેલા રહો.
+        માર્કેટ સંબંધિત માહિતી, શૈક્ષણિક કન્ટેન્ટ
+        અને સામાન્ય માર્કેટ ચર્ચાઓ સાથે જોડાયેલા રહો.
 
-</p>
-
-
-<a
-href="https://t.me/+W7w_k3HA1NBkODU1"
-target="_blank"
-class="telegram-btn">
-
-<div class="telegram-icon">
-➤
-</div>
-
-JOIN TELEGRAM COMMUNITY
-
-</a>
+    </p>
 
 
-<div class="note">
+    <!-- TELEGRAM CTA -->
 
-Educational & Informational Content Only • Market Risk Involved
+    <a
+        href="https://t.me/+W7w_k3HA1NBkODU1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="telegram-btn"
+    >
 
-</div>
+        <div class="telegram-icon">
+            ➤
+        </div>
 
-</div>
+        JOIN TELEGRAM COMMUNITY
+
+    </a>
+
+
+    <div class="note">
+
+        Educational & Informational Content Only.
+        Market investments involve risk.
+
+    </div>
 
 </section>
 
 
+<!-- =================================
+     MARKET COVERAGE
+================================= -->
 
-<!-- MARKET SECTION -->
+<section class="section">
 
-<section class="market-section">
+    <div class="section-title">
 
-<div class="section-title">
+        <h2>
+            Market <span>Coverage</span>
+        </h2>
 
-<h2>
+        <p>
+            Learn and explore major market segments.
+        </p>
 
-Explore <span>Market</span>
-
-</h2>
-
-<p>
-
-માર્કેટના મુખ્ય સેગમેન્ટની માહિતી એક જ જગ્યાએ.
-
-</p>
-
-</div>
+    </div>
 
 
-<div class="cards">
+    <div class="cards">
 
 
-<div class="card">
+        <div class="card">
 
-<div class="card-number">
-01 / MARKET
-</div>
+            <div class="card-label">
+                MARKET 01
+            </div>
 
-<h3>
-NIFTY
-</h3>
+            <h3>NIFTY</h3>
 
-<p>
+            <p>
+                NIFTY સંબંધિત માર્કેટ માહિતી,
+                concepts અને educational discussions.
+            </p>
 
-NIFTY સંબંધિત માર્કેટ અપડેટ્સ અને શૈક્ષણિક ચર્ચાઓ સાથે જોડાયેલા રહો.
-
-</p>
-
-</div>
+        </div>
 
 
+        <div class="card">
 
-<div class="card">
+            <div class="card-label">
+                MARKET 02
+            </div>
 
-<div class="card-number">
-02 / MARKET
-</div>
+            <h3>BANK NIFTY</h3>
 
-<h3>
-BANK NIFTY
-</h3>
+            <p>
+                BANK NIFTY અને banking sector
+                સંબંધિત શૈક્ષણિક માહિતી.
+            </p>
 
-<p>
-
-બેંકિંગ સેક્ટર અને BANK NIFTY સંબંધિત માર્કેટ ચર્ચાઓ અને અપડેટ્સ.
-
-</p>
-
-</div>
+        </div>
 
 
+        <div class="card">
 
-<div class="card">
+            <div class="card-label">
+                MARKET 03
+            </div>
 
-<div class="card-number">
-03 / MARKET
-</div>
+            <h3>SENSEX</h3>
 
-<h3>
-SENSEX
-</h3>
+            <p>
+                મુખ્ય market index અને
+                market concepts વિશે માહિતી.
+            </p>
 
-<p>
-
-મુખ્ય ઇન્ડેક્સ અને માર્કેટ મૂવમેન્ટ સંબંધિત સામાન્ય માહિતી.
-
-</p>
-
-</div>
+        </div>
 
 
-</div>
+    </div>
 
 </section>
 
 
+<!-- =================================
+     WHY JOIN
+================================= -->
 
-<!-- FEATURES -->
+<section class="section">
 
-<section class="features">
+    <div class="section-title">
 
+        <h2>
+            Why <span>Gujarati Trader?</span>
+        </h2>
 
-<div class="section-title">
-
-<h2>
-
-Why <span>Gujarati Trader?</span>
-
-</h2>
-
-<p>
-
-એક ફોકસ્ડ કમ્યુનિટી માર્કેટ લર્નિંગ અને ચર્ચા માટે.
-
-</p>
-
-</div>
+    </div>
 
 
-<div class="feature-grid">
+    <div class="feature-grid">
 
 
-<div class="feature">
+        <div class="feature">
 
-<div class="feature-icon">
-📊
-</div>
+            <div class="feature-icon">
+                📊
+            </div>
 
-<h3>
-Market Discussion
-</h3>
+            <h3>Market Information</h3>
 
-<p>
+            <p>
+                માર્કેટ સંબંધિત સામાન્ય માહિતી.
+            </p>
 
-માર્કેટ સંબંધિત ચર્ચાઓ અને માહિતી એક જ કમ્યુનિટીમાં.
-
-</p>
-
-</div>
+        </div>
 
 
+        <div class="feature">
 
-<div class="feature">
+            <div class="feature-icon">
+                📚
+            </div>
 
-<div class="feature-icon">
-⚡
-</div>
+            <h3>Educational</h3>
 
-<h3>
-Quick Updates
-</h3>
+            <p>
+                Trading અને market concepts.
+            </p>
 
-<p>
-
-માર્કેટ સંબંધિત મહત્વપૂર્ણ અપડેટ્સ સાથે જોડાયેલા રહો.
-
-</p>
-
-</div>
+        </div>
 
 
+        <div class="feature">
 
-<div class="feature">
+            <div class="feature-icon">
+                ⚡
+            </div>
 
-<div class="feature-icon">
-📚
-</div>
+            <h3>Simple Access</h3>
 
-<h3>
-Learning Focused
-</h3>
+            <p>
+                Telegram દ્વારા સરળ access.
+            </p>
 
-<p>
-
-માર્કેટ અને ટ્રેડિંગના વિષયો સમજવા માટે શૈક્ષણિક માહિતી.
-
-</p>
-
-</div>
+        </div>
 
 
+        <div class="feature">
 
-<div class="feature">
+            <div class="feature-icon">
+                🔔
+            </div>
 
-<div class="feature-icon">
-🔔
-</div>
+            <h3>Community</h3>
 
-<h3>
-Easy Access
-</h3>
+            <p>
+                Market enthusiasts સાથે જોડાઓ.
+            </p>
 
-<p>
-
-Telegram દ્વારા સરળતાથી કમ્યુનિટી સાથે જોડાઓ.
-
-</p>
-
-</div>
+        </div>
 
 
-</div>
+    </div>
 
 </section>
 
 
+<!-- =================================
+     EDUCATIONAL INFORMATION
+================================= -->
 
-<!-- CTA -->
+<section class="info-box">
+
+    <h3>
+        About Gujarati Trader
+    </h3>
+
+    <p>
+
+        Gujarati Trader નો હેતુ market-related
+        educational information અને general discussions
+        ઉપલબ્ધ કરાવવાનો છે. અહીં આપવામાં આવેલી માહિતી
+        કોઈ વ્યક્તિગત investment advice અથવા guaranteed
+        financial resultનું વચન નથી.
+
+    </p>
+
+</section>
+
+
+<!-- =================================
+     FINAL CTA
+================================= -->
 
 <section class="cta">
 
-<h2>
+    <h2>
 
-Join <span>Gujarati Trader</span>
+        Join <span>Gujarati Trader</span>
 
-</h2>
+    </h2>
 
-<p>
+    <p>
 
-અમારી Telegram Community સાથે જોડાઓ અને
-માર્કેટ સંબંધિત માહિતી અને ચર્ચાઓ સાથે અપડેટ રહો.
+        Telegram community સાથે જોડાઈને
+        market education અને general market information
+        સાથે updated રહો.
 
-</p>
+    </p>
 
 
-<a
-href="https://t.me/+W7w_k3HA1NBkODU1"
-target="_blank"
-class="telegram-btn">
+    <a
+        href="https://t.me/+W7w_k3HA1NBkODU1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="telegram-btn"
+    >
 
-<div class="telegram-icon">
-➤
-</div>
+        <div class="telegram-icon">
+            ➤
+        </div>
 
-JOIN TELEGRAM NOW
+        JOIN TELEGRAM
 
-</a>
+    </a>
 
 </section>
 
 
-
-<!-- FOOTER -->
+<!-- =================================
+     FOOTER
+================================= -->
 
 <footer>
 
-<div class="risk">
+    <strong>Risk Disclaimer</strong>
 
-<strong>
-Risk Disclaimer
-</strong>
+    <br>
 
-<br>
+    Gujarati Trader પર ઉપલબ્ધ માહિતી માત્ર
+    educational और informational purposes માટે છે.
+    Stock market અને અન્ય financial marketsમાં
+    investment/trading risk સામેલ છે.
+    કોઈપણ financial decision લેતા પહેલાં
+    પોતાની research કરો અને જરૂરી હોય તો
+    qualified financial professionalની સલાહ લો.
 
-આ વેબસાઇટ પર આપવામાં આવેલી માહિતી માત્ર શૈક્ષણિક અને
-માહિતી હેતુ માટે છે. શેર માર્કેટમાં રોકાણ અને ટ્રેડિંગમાં
-નાણાકીય જોખમ સામેલ છે. કોઈપણ નાણાકીય નિર્ણય લેતા પહેલા
-તમારી પોતાની રિસર્ચ કરો અને જરૂર પડે તો યોગ્ય નાણાકીય સલાહકારની સલાહ લો.
+    <div class="footer-links">
 
-</div>
+        <a href="#privacy">
+            Privacy Policy
+        </a>
 
-© 2026 Gujarati Trader. All Rights Reserved.
+        <a href="#terms">
+            Terms & Conditions
+        </a>
+
+        <a href="#risk">
+            Risk Disclaimer
+        </a>
+
+    </div>
+
+    <br>
+
+    © 2026 Gujarati Trader. All Rights Reserved.
 
 </footer>
 
@@ -1083,17 +1006,44 @@ Risk Disclaimer
 </div>
 
 
-
-<!-- FLOATING TELEGRAM BUTTON -->
+<!-- =================================
+     FLOATING TELEGRAM
+================================= -->
 
 <a
-href="https://t.me/+W7w_k3HA1NBkODU1"
-target="_blank"
-class="floating-telegram">
+    href="https://t.me/+W7w_k3HA1NBkODU1"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-telegram"
+    aria-label="Join Gujarati Trader Telegram"
+>
 
-➤
+    ➤
 
 </a>
+
+
+<!-- =================================
+     PRIVACY / TERMS CONTENT
+================================= -->
+
+<div id="privacy" style="
+display:none;
+">
+Privacy Policy
+</div>
+
+<div id="terms" style="
+display:none;
+">
+Terms & Conditions
+</div>
+
+<div id="risk" style="
+display:none;
+">
+Risk Disclaimer
+</div>
 
 
 </body>
